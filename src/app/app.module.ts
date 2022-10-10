@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPrintModule } from 'ngx-print';
 
@@ -13,12 +14,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
+import { DishService } from './services/dish.service';
+
 import 'hammerjs';
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    MenuComponent
-  ],
+    MenuComponent,
+      DishdetailComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,7 +35,7 @@ import 'hammerjs';
     MatButtonModule,
     MatListModule
   ],
-  providers: [],
+  providers: [DishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
